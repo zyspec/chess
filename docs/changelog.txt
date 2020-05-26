@@ -6,6 +6,9 @@
 - added Migrate (mamba)
 - PHP7 cosmeticts (mamba)
 - tons of fixes suggested by Zyspec
+- renamed CHANGELOG.TXT to changelog.txt so it can be displayed in ./admin/about
+- refactored ./admin/main.php to eliminate functions and inline code in same file (PSR1 recommendation)
+- added game statistics to admin/index.php (suspended, active, challenges)
 
 1.0.8 ALPHA 1 (2020-05-24) NOT RELEASED
 Updated SQL to use ENGINE=MYISAM instead of TYPE=MYISAM

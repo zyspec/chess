@@ -68,8 +68,31 @@ if ($helper->getConfig('displaySampleButton')) {
 
     $adminObject->displayButton('left', '');
 }
-
 //------------- End Test Data ----------------------------
+
+//suspended games
+$games_table       = $GLOBALS['xoopsDB']->prefix('chess_games');
+$result            = $GLOBALS['xoopsDB']->query("SELECT COUNT(*) FROM $games_table WHERE suspended != ''");
+[$total_suspended] = $GLOBALS['xoopsDB']->fetchRow($result);
+$GLOBALS['xoopsDB']->freeRecordSet($result);
+
+// active games
+$games_table     = $GLOBALS['xoopsDB']->prefix('chess_games');
+$result          = $GLOBALS['xoopsDB']->query("SELECT COUNT(*) FROM $games_table WHERE pgn_result = '*' AND suspended = ''");
+[$total_active]  = $GLOBALS['xoopsDB']->fetchRow($result);
+$GLOBALS['xoopsDB']->freeRecordSet($result);
+
+// challenges
+$challenges_table = $GLOBALS['xoopsDB']->prefix('chess_challenges');
+$result           = $GLOBALS['xoopsDB']->query("SELECT COUNT(*) FROM $challenges_table");
+[$num_challenges] = $GLOBALS['xoopsDB']->fetchRow($result);
+$GLOBALS['xoopsDB']->freeRecordSet($result);
+
+
+$adminObject->addInfoBox(_AM_CHESS_DASHBOARD);
+$adminObject->AddInfoBoxLine(sprintf('<span class="infolabel">' . _AM_CHESS_SUSPENDED_GAMES . ': %s' . '</span>', '<span class="infotext red bold">' . $total_suspended . '</span>'));
+$adminObject->addInfoBoxLine(sprintf('<span class="infolabel">' . _AM_CHESS_ACTIVE_GAMES . ': %s' . '</span>', '<span class="infotext green bold">' . $total_active . '</span>'));
+$adminObject->addInfoBoxLine(sprintf('<span class="infolabel">' . _AM_CHESS_CHALLENGES . ': %s' . '</span>', '<span class="infotext bold">' . $num_challenges . '</span>'));
 
 $adminObject->displayIndex();
 

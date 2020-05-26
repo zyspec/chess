@@ -16,6 +16,8 @@ define('_AM_CHESS_CONF', 'Schach');
 define('_AM_CHESS_PREFS', 'Einstellungen');
 define('_AM_CHESS_PREFS_DESC', 'Einstellungen bearbeiten');
 
+define('_AM_CHESS_DASHBOARD', _AM_CHESS_CONF . ' Instrumententafel');
+
 define('_AM_CHESS_SUSPENDED_GAMES', 'unterbrochene Partien');
 define('_AM_CHESS_SUSPENDED_GAMES_DES', 'Zeige unterbrochene Partien');
 

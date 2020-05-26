@@ -77,6 +77,7 @@ define('_CHESS_USERNAME_ALLOWED_CHARACTERS', 'A-Za-z0-9 \.\-');
  */
 define('_CHESS_REDIRECT_DELAY_FAILURE', 5); // action failed
 define('_CHESS_REDIRECT_DELAY_SUCCESS', 1); // action succeeded
+define('_CHESS_REDIRECT_DELAY_IMMEDIATE', 0); // action jump
 
 /**#@+
  * menu option for filtering challenges: open/individual/all

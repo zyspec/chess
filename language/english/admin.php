@@ -16,6 +16,8 @@ define('_AM_CHESS_CONF', 'Chess');
 define('_AM_CHESS_PREFS', 'Preferences');
 define('_AM_CHESS_PREFS_DESC', 'Edit module preferences');
 
+define('_AM_CHESS_DASHBOARD', _AM_CHESS_CONF . ' Dashboard');
+
 define('_AM_CHESS_SUSPENDED_GAMES', 'Suspended games');
 define('_AM_CHESS_SUSPENDED_GAMES_DES', 'View games that have been suspended');
 
